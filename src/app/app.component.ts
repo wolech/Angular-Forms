@@ -20,4 +20,5 @@ export class AppComponent {
   onsubmit() {
     console.log(this.user);
   } 
+  
 }
