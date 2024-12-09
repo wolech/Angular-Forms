@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="app.component.css">
 
-<form action="" (submit)="onsubmit()"> 
+<form action="" (submit)="onSubmit()"> 
  <div>
       <div>Name</div>
       <input type="text" 
@@ -19,8 +19,8 @@
 </div>  
 <div>
   <div>email address</div>
-  <input type="text" 
-  placeholder="Enter your email address"
+  <input type="email" 
+  placeholder="your@email.address"
   email="email" [(ngModel)]="user.email">
 
 </div>  

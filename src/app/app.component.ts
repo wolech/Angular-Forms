@@ -10,15 +10,25 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  user: any = {
+  user = {
     name: '',
-    surname: '',  
+    surname: '',
     email: '',
     password: '',
-    cpassword: '',
+    cpassword: ''
   };
-  onsubmit() {
-    console.log(this.user);
-  } 
-  
+
+  passwordFieldType: string = 'password';
+
+  togglePasswordVisibility() {
+    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
+  }
+
+  onSubmit() {
+    if (this.user.password === this.user.cpassword) {
+      console.log('User Data:', this.user);
+    } else {
+      console.error('Passwords do not match');
+    }
+  }
 }
