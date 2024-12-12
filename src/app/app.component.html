@@ -1,45 +1,38 @@
-<link rel="stylesheet" type="text/css" href="app.component.css">
+<head> 
 
+
+</head>
+<mat-card class="login page">
+  <mat-card title="login">login</mat-card>
+  <mat-card-content>  
 <form action="" (submit)="onSubmit()"> 
  <div>
       <div>Name</div>
-      <input type="text" 
-      placeholder="Enter your name"
-      name="name" 
-      [(ngModel)]="user.name">
+      <input [(ngModel)]="user.name" [ngModelOptions]="{standalone: true} " placeholder="Enter your name">
 
   </div>
 
   <div>
     <div>Surname </div>
-    <input type="text" 
-    placeholder="Enter your surname"
-    surname="surname" [(ngModel)]="user.surname">
+    <input [(ngModel)]="user.surname" [ngModelOptions]="{standalone: true} " placeholder="Enter your surname">
+  
 
 </div>  
 <div>
   <div>email address</div>
-  <input type="email" 
-  placeholder="your@email.address"
-  email="email" [(ngModel)]="user.email">
+  <input type="email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true} " placeholder="Enter your email address">
+
 
 </div>  
 <div>
   <div>enter password</div>
-  <input type="password" 
-  placeholder="Enter your password"
-  password="password" [(ngModel)]="user.password">
+  <input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true} " placeholder="Enter your password">
+
 
 </div>  
 <div>
-  <div>confirm password</div> 
-  <input type="password" 
-  placeholder="Confirm your password"
-  confirmpassword ="cpassword" [(ngModel)]="user.cpassword">
-
-</div>
-
-<div>
-  <button type="submit">submit</button>
+  <button type="submit">Login</button>
 </div>
 </form> 
+</mat-card-content> 
+</mat-card>
