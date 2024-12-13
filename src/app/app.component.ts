@@ -22,7 +22,7 @@ export class AppComponent {
     surname: '',
     email: '',
     password: '',
-    cpassword: ''
+   
   };
 
   passwordFieldType: string = 'password';
@@ -32,10 +32,6 @@ export class AppComponent {
   }
 
   onSubmit() {
-    if (this.user.password === this.user.cpassword) {
-      console.log('User Data:', this.user);
-    } else {
-      console.error('Passwords do not match');
     }
   }
-}
+

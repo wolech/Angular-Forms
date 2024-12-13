@@ -5,7 +5,7 @@
 <mat-card class="login page">
   <mat-card title="login">login</mat-card>
   <mat-card-content>  
-<form action="" (submit)="onSubmit()"> 
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
  <div>
       <div>Name</div>
       <input [(ngModel)]="user.name" [ngModelOptions]="{standalone: true} " placeholder="Enter your name">
