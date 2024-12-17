@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, contentChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,16 +15,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   imports: [CommonModule, FormsModule, MatDatepickerModule, MatInputModule, MatFormFieldModule, MatCardModule]
 })
 export class AppComponent {
-  title(title: any) {
-    throw new Error('Method not implemented.');
-  }
   user = {
     name: '',
     surname: '',
     email: '',
-    password: '',
-   
-  };
+    password: ''    };
+
+  constructor(private router: Router) {}
 
   passwordFieldType: string = 'password';
 
@@ -32,6 +30,7 @@ export class AppComponent {
   }
 
   onSubmit() {
+    console.log('User Data:', this.user);
     }
   }
 

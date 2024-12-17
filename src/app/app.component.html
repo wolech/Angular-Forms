@@ -3,39 +3,36 @@
 
 </head>
 <div class="container">
-
   <mat-card class="login page">
-  <mat-card title="login">login</mat-card>
-  <mat-card-content>  
-    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
- <div>
-      <div>Name</div>
-      <input [(ngModel)]="user.name" [ngModelOptions]="{standalone: true} " placeholder="Enter your name">
+    <mat-card title="login">login</mat-card>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div>
+          <div>Name</div>
+          <input type="text" name="name" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}" placeholder="Enter your name" required>
+        </div>
 
-  </div>
+        <div>
+          <div>Surname</div>
+          <input type="text" name="surname" [(ngModel)]="user.surname" [ngModelOptions]="{standalone: true}" placeholder="Enter your surname" required>
+        </div>
 
-  <div>
-    <div>Surname </div>
-    <input [(ngModel)]="user.surname" [ngModelOptions]="{standalone: true} " placeholder="Enter your surname">
-  
+        <div>
+          <div>email address</div>
+          <input type="email" name="email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" placeholder="Enter your email address" required>
+        </div>
 
-</div>  
-<div>
-  <div>email address</div>
-  <input type="email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true} " placeholder="Enter your email address">
+        <div>
+          <div>enter password</div>
+          <input type="password" name="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" placeholder="Enter your password" required>
+        </div>
 
-
-</div>  
-<div>
-  <div>enter password</div>
-  <input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true} " placeholder="Enter your password">
-
-
-</div>  
-<div>
-  <button type="submit">Login</button>
-</div>
-</form> 
-</mat-card-content> 
-</mat-card>
+             <div>
+              <a routerLink="/customer-update"><button type="submit">Login</button> 
+                </a>
+        </div>
+      </form>
+     
+    </mat-card-content>
+  </mat-card>
 </div>
