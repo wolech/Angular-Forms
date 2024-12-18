@@ -15,11 +15,16 @@ import { Router } from '@angular/router';
   imports: [CommonModule, FormsModule, MatDatepickerModule, MatInputModule, MatFormFieldModule, MatCardModule]
 })
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   user = {
     name: '',
     surname: '',
     email: '',
-    password: ''    };
+    password: '',
+    cpassword: ''
+  };
 
   constructor(private router: Router) {}
 
@@ -30,7 +35,15 @@ export class AppComponent {
   }
 
   onSubmit() {
-    console.log('User Data:', this.user);
+    if (this.user.password === this.user.cpassword) {
+      console.log('User Data:', this.user);
+      this.router.navigate(['customer-update/customer-update.component.html']);
+    } else {
+      console.error('Passwords do not match');
     }
   }
 
+  navigateToCustomerUpdate() {
+    this.router.navigate(['/customer-update']);
+  }
+}

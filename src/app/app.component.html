@@ -27,12 +27,16 @@
           <input type="password" name="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" placeholder="Enter your password" required>
         </div>
 
-             <div>
-              <a routerLink="/customer-update"><button type="submit">Login</button> 
-                </a>
+        <div>
+          <div>confirm password</div>
+          <input type="password" name="cpassword" [(ngModel)]="user.cpassword" [ngModelOptions]="{standalone: true}" placeholder="Confirm your password" required>
+        </div>
+
+        <div class="button-group">
+          <button type="submit" (click)="navigateToCustomerUpdate()">Login</button>
+          <button type="reset">Reset</button>
         </div>
       </form>
-     
     </mat-card-content>
   </mat-card>
 </div>

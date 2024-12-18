@@ -1,4 +1,10 @@
+<head></head>
+
 <div class="container">
+  <mat-card class="Update page">
+    <mat-card title="Update">Update your data</mat-card>
+    <mat-card-content>
+
   <form (ngSubmit)="onUpdate()" #updateForm="ngForm">
     <div>
       <label for="accountNumber">Account Number</label>
@@ -38,4 +44,6 @@
 
     <button type="submit" [disabled]="!updateForm.form.valid">Update</button>
   </form>
+    </mat-card-content>
+  </mat-card>
 </div>
