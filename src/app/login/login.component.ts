@@ -1,20 +1,20 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { Router, RouterOutlet } from '@angular/router';
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  imports: [RouterOutlet]
+  selector: 'app-login',
+  imports: [CommonModule, FormsModule, MatDatepickerModule, MatInputModule, MatFormFieldModule, MatCardModule],
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css'
 })
-export class AppComponent {
+export class LoginComponent {
   title(title: any) {
     throw new Error('Method not implemented.');
   }
@@ -35,15 +35,13 @@ export class AppComponent {
   }
 
   onSubmit() {
-    if (this.user.password === this.user.cpassword) {
-      console.log('User Data:', this.user);
-      this.router.navigate(['customer-update/customer-update.component.html']);
-    } else {
-      console.error('Passwords do not match');
+    this.router.navigate(['/customer-update']);
     }
   }
 
-  navigateToCustomerUpdate() {
-    this.router.navigate(['/customer-update']);
-  }
-}
+
+    
+  
+
+
+
