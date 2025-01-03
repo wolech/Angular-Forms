@@ -5,6 +5,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-update',
@@ -24,9 +25,9 @@ export class CustomerUpdateComponent {
     date: ''
   };
 user: any;
-
+constructor(private router: Router) {}
   onUpdate() {
     console.log('Updated Customer Data:', this.customer);
-    // Add your update logic here
+    this.router.navigate(['/endpage']);
   }
 }
