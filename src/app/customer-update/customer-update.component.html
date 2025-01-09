@@ -7,36 +7,31 @@
 
   <form (ngSubmit)="onUpdate()" #updateForm="ngForm">
     <div>
-      <label for="accountNumber">Account Number</label>
-      <input type="text" id="accountNumber" name="accountNumber" [(ngModel)]="customer.accountNumber" required>
+      <label for="firstname">New Administrator Name</label>
+      <input type="text" id="firstname" name="firstname" [(ngModel)]="customer.firstName" placeholder="Enter New Administrator name" required>
     
     </div>
 
     <div>
-      <label for="businessName">Name of Business</label>
-      <input type="text" id="businessName" name="businessName" [(ngModel)]="customer.businessName" required>
-    </div>
-
-    <div>
-      <label for="phoneNumber">Phone Number</label>
-      <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="customer.phoneNumber" required>
-    </div>
-
-    <div>
-      <label for="currentAdminName">Current Administrator Name</label>
-      <input type="text" id="currentAdminName" name="currentAdminName" [(ngModel)]="customer.currentAdminName" required>
-    </div>
-
-    <div>
-      <label for="newAdminName">New Administrator Name</label>
-      <input type="text" id="newAdminName" name="newAdminName" [(ngModel)]="customer.newAdminName" required>
+      <label for="lastname">New Administrator Surname</label>
+      <input type="text" id="lastname" name="lastname" [(ngModel)]="customer.lastName" placeholder="Enter New Administrator surname" required>
     </div>
 
     <div>
       <label for="newAdminEmail">New Administrator Email Address</label>
-      <input type="email" id="newAdminEmail" name="newAdminEmail" [(ngModel)]="customer.newAdminEmail" required>
+      <input type="email" id="newAdminEmail" name="newAdminEmail" [(ngModel)]="customer.newAdminEmail" placeholder="Enter New Administrator email address" required email>
     </div>
 
+    <div>
+      <label for="currentAdminName">Current Administrator Name</label>
+      <input type="text" id="currentAdminName" name="currentAdminName" [(ngModel)]="customer.currentAdminName" placeholder="Enter Current Administrator name" required>
+    </div>
+
+    <div>
+      <label for="newAdminName">New Administrator Surname</label>
+      <input type="text" id="newAdminSurname" name="newAdminSurname" [(ngModel)]="customer.newAdminSurname" placeholder="Enter Current Administrator surname" required>
+    </div>
+    
     <div>
       <label for="date">Select current date</label>
       <input type="date" id="date" name="date" [(ngModel)]="customer.date" required>

@@ -16,11 +16,11 @@ import { Router } from '@angular/router';
 
 export class CustomerUpdateComponent {
   customer = {
-    accountNumber: '',
-    businessName: '',
+    firstName: '',
+    lastName: '',
     phoneNumber: '',
     currentAdminName: '',
-    newAdminName: '',
+    newAdminSurname: '',
     newAdminEmail: '',
     date: ''
   };

@@ -34,7 +34,10 @@ export class LoginComponent {
     this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
   }
 
-  onSubmit() {
+  onSubmit() 
+  
+  
+  {
     this.router.navigate(['/customer-update']);
     }
   }
