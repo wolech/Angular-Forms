@@ -1,39 +1,35 @@
-<head> 
+<div class="container" style="margin: 100px;">
+  <mat-card class="login page">
+    <mat-card title="login">login</mat-card>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+        <div>
+          <h2 style="color: red;">
+            {{user.errorMessage}}
+          </h2>
+        </div>
 
+        <div>
+          <label for="name">Login</label>
+          <input type="text" id="name" name="name" [(ngModel)]="user.name" placeholder="Enter your name" required title="First Name Required">
+          <div *ngIf="userForm.controls['name']?.errors?.['required'] && userForm.controls['name'].touched">
+            <p style="color: red;">First Name is required.</p>
+          </div>
+        </div>
 
-</head>
-<div class="container">
-    <mat-card class="login page">
-      <mat-card title="login">login</mat-card>
-      <mat-card-content>
-        <form (ngSubmit)="onSubmit()" #userForm="ngForm">
-          <div>
-              <label for="login">Login</label>
-              <!--To add tooltip message use title attribute. I have added for this textbox, you can
-              add them in other fields as well as buttons-->
-              <input type="text" id="login" name="login" [(ngModel)]="user.name" placeholder="Enter your name" required title="First Name Required">
-              <!--The below code is to check if user has touched the textbox and if the textbox is empty,
-              validation message will be displayed. I have done it for one field, do it for rest of the fields as well-->
-              <div *ngIf="userForm.controls['login']?.errors?.['required'] && userForm.controls['login'].touched">
-                <p style="color: red;">First Name is required.</p>
-              </div>
+        <div>
+          <label for="password">Enter Password</label>
+          <input type="password" id="password" name="password" [(ngModel)]="user.password" placeholder="Enter your password" required>
+          <div *ngIf="userForm.controls['password']?.errors?.['required'] && userForm.controls['password'].touched">
+            <p style="color: red;">Password is required.</p>
           </div>
-  
-          <div>
-              <label for="login">Enter Password</label>
-            <input type="password" name="password" [(ngModel)]="user.password" placeholder="Enter your password" required>
-          
-           <!--add validation message for password-->
-          </div>
-  
-  
-          <!--The below codes I have done to check password and confirm password match-->
-  
-                  <div class="button-group">
-            <button type="submit">Login</button>
-            <button type="reset">Reset</button>
-          </div>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  </div>
+        </div>
+
+        <div class="button-group">
+          <button type="submit">Login</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
