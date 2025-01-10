@@ -33,7 +33,8 @@ ngOnInit(): void {
 
 
   onUpdate() {
-    console.log('Updated Customer Data:', this.customer);
+    
     this.router.navigate(['/endpage']);
+    
   }
 }
