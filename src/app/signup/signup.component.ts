@@ -14,6 +14,12 @@ import { Router } from '@angular/router';
   styleUrl: './signup.component.css'
 })
 export class SignupComponent implements OnInit {
+  goto() {
+    throw new Error('Method not implemented.');
+  }
+  isVisible(): any {
+    throw new Error('Method not implemented.');
+  }
 
   user = {
     name: '',
@@ -39,13 +45,15 @@ export class SignupComponent implements OnInit {
       console.log('Form Submitted!', this.user);
       const validUser = this.users.find(u => u.name === this.user.name && u.password === this.user.password);
       if (validUser) {
-        console.log('Login successful');
+       alert('Valid User Credential. Welcome User');
         this.router.navigate(['/customer-update']); // Redirect to the update component
       } else {
         console.log('Invalid credentials');
+        this.user.errorMessage = 'Invalid credentials';
       }
     }
   }
+ 
 
 
 }
